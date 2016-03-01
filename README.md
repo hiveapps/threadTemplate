@@ -88,7 +88,7 @@ The file structure goes as follows:</p>
 				
 			<li>templates</li>
 				<ul>
-					<li>Thread.html</li>
+					<li>thread.html</li>
 					<li>header.html</li>
 					<li>login.html</li>
 				</ul>
@@ -217,9 +217,9 @@ database, we believe that this will prove to be a great starting point for you t
 							<li>templates</li>
 								<ul>
 									
-									<li>Thread.html</li>
+									<li>thread.html</li>
 										<ul>
-											<li>The Thread.html file is where we have setup all the html for the 'Thread' page, this page integrates
+											<li>The thread.html file is where we have setup all the html for the 'Thread' page, this page integrates
 											AngularJS to display each new message and utilizes to the ThreadCtrl.</li>
 										</ul>
 									
