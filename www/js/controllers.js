@@ -99,40 +99,41 @@ var users = new Firebase("https://threadtemplate.firebaseio.com/");
 //Thread Page Controller
 hive.controller("threadCtrl", function($scope, $firebaseArray) {
 
-var timestamp = Math.floor(Date.now());
-var FIREBASE_URL = "https://threadtemplate.firebaseio.com/";
+var ref = new Firebase("https://threadtemplate.firebaseio.com/");
 
     // Get Stored TODOs
     var todosRef = new Firebase("https://threadtemplate.firebaseio.com/");
     $scope.todos = $firebaseArray(todosRef);
 
+    // Add new TODO
+    $scope.addItem  = function () {
 
+        // Create a unique ID
+        var timestamp = new Date().valueOf()
 
-    var newPostRef = new Firebase(FIREBASE_URL + timestamp);
-    
-    $scope.addItem = function(){
-      
-      newPostRef.set({
-          id: timestamp,
-          description: $scope.postDescription,
-          likes: 0,
-          liked: false
+        // Get the Firebase reference of the item
+        var itemRef = new Firebase(ref + timestamp);
+
+        itemRef.set({
+            id: timestamp,
+            description: $scope.postDescription,
+            liked: false
         });
-        
+
         $scope.postDescription = "";
+
     };
     
     // Update the "completed" status
     $scope.changeStatus   = function (item) {
 
         // Get the Firebase reference of the item
-        var itemRef = new  Firebase(FIREBASE_URL + item.id);
+        var itemRef = new  Firebase(ref + item.id);
 
         // Firebase : Update the item
         itemRef.update({
             id: item.id,
             description : item.description,
-            likes: item.likes + 1,
             liked: !item.liked
         });
 
