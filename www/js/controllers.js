@@ -142,7 +142,6 @@ var ref = new Firebase("https://threadtemplate.firebaseio.com/");
         itemRef.update({
             id: item.id,
             description : item.description,
-            liked: !item.liked
         });
 
     };

@@ -26,32 +26,7 @@ Login Page Wrapper Styling */
 /* End of Login Page Styling */
 
 
-/* Beginning of Chat Page Styling - 
-Chat Page Wrapper*/
-.chatWrapper {
-	margin-bottom: 25%;
-	padding: 3%;
-}
+/* Beginning of Thread Page Styling - 
 
-/* Card styling */
-.chatWrapper .card {
-	border: 1px solid grey;
-	border-radius: 5px;
-	margin-bottom: 3%;
-}
-.chatWrapper .card .card-block {
-	padding: 1%;
-	min-height: 100px;
-}
-
-/* Chat Page Footer/Send Message Input Styling */
-.chatFooter .navbar {
-	width: 100%;
-	text-align: center;
-	padding-top: 1%;
-}
-.chatFooter .navbar input {
-	width: 75%;
-}
-/* End of Chat Page Styling */
+/* End of Thread Page Styling */
 

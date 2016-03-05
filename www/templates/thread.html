@@ -1,7 +1,7 @@
 <div ng-controller="threadCtrl" class="container">
 
-	<h2>Realtime Thread with AngularJS and AngularFire</h2>
-	<h4>Try it opening two browsers and adding / removing a Post</h4>
+	<h2>Realtime Thread with AngularJS and AngularFire/Firebase</h2>
+	<h4>You can test it by opening two browsers (must be firefox or own webserver due to use of ui-router) and adding a Post</h4>
 	
 	
 	<!--ADD ITEM FORM-->
@@ -26,13 +26,7 @@
 			<p class="card-text">{{item.description}}</p><small  class="text-warning"> [ {{item.id}} ]</small>
 		</div>
 		<div class="card-footer text-muted" style="background-color: #d3d3d3; padding: 2%;">
-			
-			<!-- 'Like' Button -->
-			<button type="button" class="btn btn-primary btn-md" id="inc" ng-click="changeStatus(item)">
-				<!--COMPLETED ICON-->
-				<span class="glyphicon glyphicon-thumbs-up" ng-show="item.liked"></span> Like<span ng-show="item.liked">d</span>
-			</button>
-			
+			<!-- You can add buttons such as 'Like', 'Delete', etc. in here -->
 		</div>
 	</div>
 	<!-- End of Card -->
