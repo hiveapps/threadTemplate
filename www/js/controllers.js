@@ -101,9 +101,7 @@ hive.controller("threadCtrl", function($scope, $firebaseArray, $timeout) {
 
 var ref = new Firebase("https://threadtemplate.firebaseio.com/");
 
-    /*// Get Stored TODOs
-    var todosRef = new Firebase("https://threadtemplate.firebaseio.com/");
-    $scope.todos = $firebaseArray(todosRef);*/
+    // Get Stored Posts
     var ratesRef = new Firebase('https://threadtemplate.firebaseio.com/posts');
   
     ratesRef.on("value", function (snapshot) {
@@ -118,7 +116,7 @@ var ref = new Firebase("https://threadtemplate.firebaseio.com/");
     };
     
     
-    //submitting posts
+    //Submit posts
     var postsRef = ref.child("posts")
     $scope.addItem = function(){
       
@@ -133,26 +131,8 @@ var ref = new Firebase("https://threadtemplate.firebaseio.com/");
         
         $scope.postDescription = "";
     };
-    /*// Add new TODO
-    $scope.addItem  = function () {
-
-        // Create a unique ID
-        var timestamp = new Date().valueOf()
-
-        // Get the Firebase reference of the item
-        var itemRef = new Firebase(ref + timestamp);
-
-        itemRef.set({
-            id: timestamp,
-            description: $scope.postDescription,
-            liked: false
-        });
-
-        $scope.postDescription = "";
-
-    };*/
     
-    // Update the "completed" status
+    // Update the "like" status to 'liked'
     $scope.changeStatus   = function (item) {
 
         // Get the Firebase reference of the item

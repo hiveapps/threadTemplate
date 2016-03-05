@@ -27,11 +27,7 @@
 		</div>
 		<div class="card-footer text-muted" style="background-color: #d3d3d3; padding: 2%;">
 			
-			<!--Delete Todo button-->
-			<button type="button" class="btn btn-danger btn-md" ng-click="removeItem($index, item, $event)">
-				<i class="icon-remove-sign"></i>Delete
-			</button>
-			
+			<!-- 'Like' Button -->
 			<button type="button" class="btn btn-primary btn-md" id="inc" ng-click="changeStatus(item)">
 				<!--COMPLETED ICON-->
 				<span class="glyphicon glyphicon-thumbs-up" ng-show="item.liked"></span> Like<span ng-show="item.liked">d</span>
