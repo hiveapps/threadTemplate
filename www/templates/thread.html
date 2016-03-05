@@ -17,7 +17,7 @@
 	<hr>
 	
 	<!-- Beginning of Card -->
-	<div class="card text-xs-center" ng-repeat="item in todos" style="border: 1px solid grey; border-radius: 5px; margin-bottom: 3%;">
+	<div class="card text-xs-center" ng-repeat="item in todos | orderBy:'-id'" style="border: 1px solid grey; border-radius: 5px; margin-bottom: 3%;">
 		<div class="card-header" style="background-color: #d3d3d3; padding: 1%;">
 			<img class="card-img-top" data-src="..." alt="Card image" style="height: 75px; width: 75px;">
 		</div>

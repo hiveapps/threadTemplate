@@ -97,15 +97,43 @@ var users = new Firebase("https://threadtemplate.firebaseio.com/");
 
 
 //Thread Page Controller
-hive.controller("threadCtrl", function($scope, $firebaseArray) {
+hive.controller("threadCtrl", function($scope, $firebaseArray, $timeout) {
 
 var ref = new Firebase("https://threadtemplate.firebaseio.com/");
 
-    // Get Stored TODOs
+    /*// Get Stored TODOs
     var todosRef = new Firebase("https://threadtemplate.firebaseio.com/");
-    $scope.todos = $firebaseArray(todosRef);
-
-    // Add new TODO
+    $scope.todos = $firebaseArray(todosRef);*/
+    var ratesRef = new Firebase('https://threadtemplate.firebaseio.com/posts');
+  
+    ratesRef.on("value", function (snapshot) {
+      $timeout(function () {
+        update(snapshot);
+        console.log(snapshot);
+      });
+    });
+    
+    function update (snapshot) {
+      $scope.todos = $firebaseArray(ratesRef);
+    };
+    
+    
+    //submitting posts
+    var postsRef = ref.child("posts")
+    $scope.addItem = function(){
+      
+        // Create a unique ID
+        var timestamp = new Date().valueOf()
+  
+        postsRef.push({
+          id: timestamp,
+          description: $scope.postDescription,
+          liked: false
+        });
+        
+        $scope.postDescription = "";
+    };
+    /*// Add new TODO
     $scope.addItem  = function () {
 
         // Create a unique ID
@@ -122,7 +150,7 @@ var ref = new Firebase("https://threadtemplate.firebaseio.com/");
 
         $scope.postDescription = "";
 
-    };
+    };*/
     
     // Update the "completed" status
     $scope.changeStatus   = function (item) {
