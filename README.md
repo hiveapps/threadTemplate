@@ -1,7 +1,7 @@
 <h1><b>Hive Thread Template</b></h1>
 
-<p>The Hive Thread Template is built to provide a very basic Thread service that integrates firebase login and a messaging service 
-with a custom factory and controllers.</p>
+<p>The Hive Thread Template is built to provide a very basic Thread service that integrates firebase login and a posting service (much like facebook)
+with custom controllers and templates.</p>
 
 <ul>
 	<li>Click on any of the below links to navigate to the selected section:</li>
@@ -73,7 +73,7 @@ The file structure goes as follows:</p>
 					<li>angular-ui-router.min.js</li>
 					<li>angular.min.js</li>
 					<li>app.js</li>
-					<li>controller.js</li>
+					<li>controllers.js</li>
 					<li>directives.js</li>
 					<li>services.js</li>
 				</ul>
@@ -220,7 +220,7 @@ database, we believe that this will prove to be a great starting point for you t
 									<li>thread.html</li>
 										<ul>
 											<li>The thread.html file is where we have setup all the html for the 'Thread' page, this page integrates
-											AngularJS to display each new message and utilizes to the ThreadCtrl.</li>
+											AngularJS to display each new post and utilizes the ThreadCtrl.</li>
 										</ul>
 									
 									<li>header.html</li>
